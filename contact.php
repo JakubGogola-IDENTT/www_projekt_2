@@ -55,7 +55,7 @@ echo $page_gen->gen_begin();
 
             </div>
             <div class="col-4-6">
-                <h2 class="roboto-font">Kontak e-mailowy</h2>
+                <h2 class="roboto-font">Kontakt e-mailowy</h2>
                 <p class="lato-font">
                     Serdecznie zachęcam do kontatu e-mailowego. Wysyłanie listów z adresem mojej karty sieciowej to nie jest raczej zbyt dobry pomysł.
                 </p>
