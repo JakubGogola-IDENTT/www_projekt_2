@@ -52,29 +52,27 @@ echo $page_gen->gen_begin();
 <div class="container">
     <div class="row">
         <div class="col-2-6">
-            <img src="images/code.png" alt="error" class="icon">
-        </div>
-        <div class="col-2-6">
-            <img src="images/go.png" alt="error" class="icon">
-        </div>
-        <div class="col-2-6">
-            <img src="images/github.png" alt="error" class="icon">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-2-6">
+            <div class="icon-container">
+                <img src="images/code.png" alt="error" class="icon">
+            </div>
             <p class="lato-font">
                 Jestem programistą. Na studiach najczęściej programuję w językach takich jak Java, C/C++ czy JavaScript.
                 Samodzielnie uczę się Pythona.
             </p>
         </div>
         <div class="col-2-6">
+            <div class="icon-container">
+                <img src="images/go.png" alt="error" class="icon">
+            </div>
             <p class="lato-font">
                 Ostatnio zainteresowałem się również w miarę nowym i dynamicznie rozwijającym się językiem programowania jakim jest
                 <a href="https://golang.org/">Go</a>. W chwilach wolnych od nauki i pracy staram się go uczyć.
             </p>
         </div>
         <div class="col-2-6">
+            <div class="icon-container">
+                <img src="images/github.png" alt="error" class="icon">
+            </div>
             <p class="lato-font">
                 Jeżeli chcesz zobaczyć trochę mojego kodu to zachęcam do odwiedzenia mojego repozytorium na
                 <a href="https://github.com/JakubGogola">GitHubie</a>, gdzie umieszczam swoje najlepsze projekty.
