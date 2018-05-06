@@ -59,7 +59,7 @@ $RETURN =<<<EOT
 EOT;
 
 $RETURN_ITEM =<<<EOT
-<li><a href="{{LINK}}"> {{NAME}} > </a></li>
+<li><a href="{{LINK}}"> {{NAME}}</a> > </li>
 EOT;
 class page_gen {
 
