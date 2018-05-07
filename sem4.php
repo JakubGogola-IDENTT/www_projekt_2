@@ -178,7 +178,7 @@ echo $page_gen->gen_begin();
     <div class="row">
         <div class="col-6-6">
             <p class="lato-font">
-                Oprócz tych kursów, realizuję obecnie jeszcze dwa kursy humanistyczne: "Podstawy negocjaji" prowadzone przez
+                Oprócz tych kursów, realizuję obecnie jeszcze dwa kursy humanistyczne: "Podstawy negocjacji" prowadzone przez
                 mgr Mariannę Zacharewicz i "Przedsiębiorczość" prowadzoną przez dr Aldonę Dereń.
             </p>
             <p class="lato-font">
