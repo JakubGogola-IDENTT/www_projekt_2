@@ -7,6 +7,7 @@
  */
 
 require_once(__DIR__ . "/gen/page_gen.php");
+require_once (__DIR__."/gen/book_div_gen.php");
 
 
 $title = "Hobby";
@@ -23,6 +24,7 @@ $menu_items[] = new menu_item("Kontakt", "contact.php");
 $return_items[] = new return_item("Strona główna", "index.php");
 
 $page_gen = new page_gen($title, $content, $author, $styles, $fonts, $scripts, $menu_items, $return_items);
+$book_div_gen = new book_div_gen();
 
 echo $page_gen->gen_begin();
 ?>
@@ -47,79 +49,31 @@ echo $page_gen->gen_begin();
 <div class="container">
     <div class="row">
         <!-- J. Grzędowicz (powieści) -->
-        <div class="col-2-6 background-color-2 text-on-background">
-            <div class="book">
-                <h2 class="roboto-font">Pan Lodowego Ogrodu</h2>
-                <p class="annotation lato-font">seria</p>
-                <h3 class="lato-font">Autor: Jarosław Grzędowicz</h3>
-            </div>
-        </div>
-        <div class="col-2-6 background-color-2 text-on-background">
-            <div class="book">
-                <h2 class="roboto-font">Popiół i kurz</h2>
-                <p class="annotation lato-font">powieść</p>
-                <h3 class="lato-font">Autor: Jarosław Grzędowicz</h3>
-            </div>
-        </div>
-        <div class="col-2-6 background-color-2 text-on-background">
-            <div class="book">
-                <h2 class="roboto-font">Hel 3</h2>
-                <p class="annotation lato-font">powieść</p>
-                <h3 class="lato-font">Autor: Jarosław Grzędowicz</h3>
-            </div>
-        </div>
+        <?php
+            $author = "Jarosław Grzędowicz";
+            echo $book_div_gen->put_book_div("Pan Lodowego Ogrodu", $author, "seria");
+            echo $book_div_gen->put_book_div("Popiół i kurz", $author, "powieść");
+            echo $book_div_gen->put_book_div("Hel 3", $author, "powieść");
+        ?>
     </div>
-
     <!-- J. Grzędowicz (zbiory opowiadań) -->
     <div class="row">
-        <div class="col-2-6 background-color-2 text-on-background">
-            <div class="book">
-                <h2 class="roboto-font">Księga Jesiennych Demonów</h2>
-                <p class="annotation lato-font">zbiór opowiadań</p>
-                <h3 class="lato-font">Autor: Jarosław Grzędowicz</h3>
-            </div>
-        </div>
-        <div class="col-2-6 background-color-2 text-on-background">
-            <div class="book">
-                <h2 class="roboto-font">Wypychacz zwierząt</h2>
-                <p class="annotation lato-font">zbiór opowiadań</p>
-                <h3 class="lato-font">Autor: Jarosław Grzędowicz</h3>
-            </div>
-        </div>
-        <div class="col-2-6 background-color-2 text-on-background">
-            <div class="book">
-                <h2 class="roboto-font">Azyl</h2>
-                <p class="annotation lato-font">zbiór opowiadań</p>
-                <h3 class="lato-font">Autor: Jarosław Grzędowicz</h3>
-            </div>
-        </div>
+        <?php
+            $type = "zbiór opowiadań";
+            echo $book_div_gen->put_book_div("Księga Jesiennych Demonów", $author, $type);
+            echo $book_div_gen->put_book_div("Wypychacz zwierząt", $author, $type);
+            echo $book_div_gen->put_book_div("Azyl", $author, $type);
+        ?>
     </div>
 
     <!-- Inne -->
     <div class="row">
-        <div class="col-2-6 background-color-2 text-on-background">
-            <div class="book">
-                <h2 class="roboto-font">Kroniki Czarnej Kompanii</h2>
-                <p class="annotation lato-font">seria</p>
-                <h3 class="lato-font">Autor: Glen Cook</h3>
-            </div>
-        </div>
-        <div class="col-2-6 background-color-2 text-on-background">
-            <div class="book">
-                <h2 class="roboto-font">Gra o Tron</h2>
-                <p class="annotation lato-font">seria</p>
-                <h3 class="lato-font">Autor: George R. R. Martin</h3>
-            </div>
-        </div>
-        <div class="col-2-6 background-color-2 text-on-background">
-            <div class="book">
-                <h2 class="roboto-font">Wykłady ze Wstępu do Matematyki</h2>
-                <p class="annotation lato-font">skrypt</p>
-                <h3 class="lato-font">Autor: Jacek Cichoń</h3>
-            </div>
-        </div>
+        <?php
+            echo $book_div_gen->put_book_div("Kroniki Czarnej Kompani", "Glen Cook", "seria");
+            echo $book_div_gen->put_book_div("Gra o tron", "George R. R. Martin", "seria");
+            echo $book_div_gen->put_book_div("Wykłady ze Wstępu do Matematyki", "J. Cichoń", "skrypt");
+        ?>
     </div>
-
 </div>
 
 <div class="container">

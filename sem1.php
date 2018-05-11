@@ -9,6 +9,7 @@
 require_once(__DIR__ . "/gen/page_gen.php");
 require_once(__DIR__."/gen/menu_item.php");
 require_once(__DIR__."/gen/return_item.php");
+require_once (__DIR__."/gen/subject_div_gen.php");
 
 $title = "Semestr I";
 $content = "Strona o mnie i moich zainteresowanich";
@@ -25,6 +26,7 @@ $return_items[] = new return_item("Strona główna", "index.php");
 $return_items[] = new return_item("Edukacja", "education.php");
 
 $page_gen = new page_gen($title, $content, $author, $styles, $fonts, $scripts, $menu_items, $return_items);
+$subject_div_gen = new subject_div_gen();
 
 echo $page_gen->gen_begin();
 ?>
@@ -39,109 +41,22 @@ echo $page_gen->gen_begin();
     </div>
 </div>
 
-<div class="row background-color-2">
-    <div class="col-6-6 text-on-background">
-        <div class="subject">
-            <h2 class="roboto-font">Analiza matematyczna I</h2>
-            <h3 class="lato-font">Prowadzący: prof. dr hab. Paweł Krupski</h3>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-3-6">
-            <h2 class="roboto-font">Czego się dowiedziałem?</h2>
-            <p class="lato-font">
-                Podczas kursu "Analiza matematyczna I" powtórzyłem sobie rachunek różniczkowy, który uprzednio poznałem w liceum.
-                Dowiedziałem się czym jest całka oraz jak obliczyć ten matematyczny "twór" mając zadaną dowolną funkcję.
-            </p>
-        </div>
-        <div class="col-3-6">
-            <h2 class="roboto-font">Czego warto się douczyć?</h2>
-            <p class="lato-font">
-                Myślę, że warto byłoby poszerzyć swoją wiedzę o teorię funkcji zespolonych.
-            </p>
-        </div>
-    </div>
-</div>
-
-<div class="row background-color-2">
-    <div class="col-6-6 text-on-background">
-        <div class="subject">
-            <h2 class="roboto-font">Algebra z geometrią analtyczną</h2>
-            <h3 class="lato-font">Prowadzący: prof. dr hab. Jacek Cichoń</h3>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-3-6">
-            <h2 class="roboto-font">Czego się dowiedziałem?</h2>
-            <p class="lato-font">
-                Podczas tego kursu dowiedziałem się czym jest teoria grup, powtórzyłem i rozszerzyłem swoje wiadomości na temat liczb zespolonych
-                i wielomianów oraz dowiedziałem się czym są macierze.
-            </p>
-        </div>
-        <div class="col-3-6">
-            <h2 class="roboto-font">Czego warto się douczyć?</h2>
-            <p class="lato-font">
-                Profesor Cichoń często wspominał o zastosowaniu algebry w grafice komputerowej. Myślę, że jest to ciekawy temat do studiowania.
-            </p>
-        </div>
-    </div>
-</div>
-
-<div class="row background-color-2">
-    <div class="col-6-6 text-on-background">
-        <div class="subject">
-            <h2 class="roboto-font">Logika i struktury formalne</h2>
-            <h3 class="lato-font">Prowadzący: dr hab. Szymon Żeberski</h3>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-3-6">
-            <h2 class="roboto-font">Czego się dowiedziałem?</h2>
-            <p class="lato-font">
-                Doktor Żeberski wprowadził nas w świat logiki matematycznej, teorii mnogości oraz poopowiadł trochę czym jest teoria modeli.
-            </p>
-        </div>
-        <div class="col-3-6">
-            <h2 class="roboto-font">Czego warto się douczyć?</h2>
-            <p class="lato-font">
-                Dosyć ciekawą dziedziną matematyki wydały mi się struktury formalne, czyli wspomniana teoria modeli. Warto by o tym trochę poczytać.
-            </p>
-        </div>
-    </div>
-</div>
-
-<div class="row background-color-2">
-    <div class="col-6-6 text-on-background">
-        <div class="subject">
-            <h2 class="roboto-font">Wstęp do informatyki i programowania</h2>
-            <h3 class="lato-font">Prowadzący: dr Przemysław Kobylański</h3>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-3-6">
-            <h2 class="roboto-font">Czego się dowiedziałem?</h2>
-            <p class="lato-font">
-                Dla mnie był to kurs, na którym mogłem powtórzyć swoją wiedzę na temat języka C i algorytmów nabytą w szkole średniej. A poza tym,
-                gdyby na czyjś dom spadł samolot, to na pewno nie byłby oprogramowany w Adzie...
-            </p>
-        </div>
-        <div class="col-3-6">
-            <h2 class="roboto-font">Czego warto się douczyć?</h2>
-            <p class="lato-font">
-                Język C to naprawdę ciekawe zjawisko. Daje programiście dużo swobody i pozwala na robienie momentami
-                niesamowitych rzeczy ze swoim komputerem. Warto by się tym zająć...
-            </p>
-        </div>
-    </div>
-</div>
 <?php
+ echo $subject_div_gen->put_subject_div("Analiza matematyczna I", "prof. dr hab. Paweł Krupsk",
+     "Podczas kursu \"Analiza matematyczna I\" powtórzyłem sobie rachunek różniczkowy, który uprzednio poznałem w liceum.
+                Dowiedziałem się czym jest całka oraz jak obliczyć ten matematyczny \"twór\" mając zadaną dowolną funkcję.",
+     "Myślę, że warto byłoby poszerzyć swoją wiedzę o teorię funkcji zespolonych.");
+ echo $subject_div_gen->put_subject_div("Algebra z geometrią analtyczną", "Prowadzący: prof. dr hab. Jacek Cichoń",
+     "Podczas tego kursu dowiedziałem się czym jest teoria grup, powtórzyłem i rozszerzyłem swoje wiadomości na temat liczb zespolonych
+                i wielomianów oraz dowiedziałem się czym są macierze.",
+     "Profesor Cichoń często wspominał o zastosowaniu algebry w grafice komputerowej. Myślę, że jest to ciekawy temat do studiowania.");
+ echo $subject_div_gen->put_subject_div("Logika i struktury formaln", "dr hab. Szymon Żeberski",
+     "Doktor Żeberski wprowadził nas w świat logiki matematycznej, teorii mnogości oraz poopowiadł trochę czym jest teoria modeli.",
+     "Dosyć ciekawą dziedziną matematyki wydały mi się struktury formalne, czyli wspomniana teoria modeli. Warto by o tym trochę poczytać.");
+ echo $subject_div_gen->put_subject_div("Wstęp do informatyki i programowania", "dr Przemysław Kobylański",
+     "Dla mnie był to kurs, na którym mogłem powtórzyć swoją wiedzę na temat języka C i algorytmów nabytą w szkole średniej. A poza tym,
+                gdyby na czyjś dom spadł samolot, to na pewno nie byłby oprogramowany w Adzie...",
+     "Język C to naprawdę ciekawe zjawisko. Daje programiście dużo swobody i pozwala na robienie momentami
+                niesamowitych rzeczy ze swoim komputerem. Warto by się tym zająć...");
 echo $page_gen->gen_end();
 ?>

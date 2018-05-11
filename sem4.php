@@ -9,6 +9,7 @@
 require_once(__DIR__ . "/gen/page_gen.php");
 require_once(__DIR__."/gen/menu_item.php");
 require_once(__DIR__."/gen/return_item.php");
+require_once (__DIR__."/gen/subject_div_gen.php");
 
 $title = "Semestr IV";
 $content = "Strona o mnie i moich zainteresowanich";
@@ -25,6 +26,7 @@ $return_items[] = new return_item("Strona główna", "index.php");
 $return_items[] = new return_item("Edukacja", "education.php");
 
 $page_gen = new page_gen($title, $content, $author, $styles, $fonts, $scripts, $menu_items, $return_items);
+$subject_div_gen = new subject_div_gen();
 
 echo $page_gen->gen_begin();
 ?>
@@ -40,139 +42,32 @@ echo $page_gen->gen_begin();
     </div>
 </div>
 
-<div class="row background-color-2">
-    <div class="col-6-6 text-on-background">
-        <div class="subject">
-            <h2 class="roboto-font">Algorytmy i struktury danych</h2>
-            <h3 class="lato-font">Prowadzący: dr inż. Zbigniew Gołębiewski</h3>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-3-6">
-            <h2 class="roboto-font">Czego się dowiedziałem?</h2>
-            <p class="lato-font">
-                Poznałem notację asymptotyczną. Zaznajomiłem się z podstawowymi algorytmami sortowania oraz ich złożonością obliczeniową.
-                Obecnie na kursie zajmujemy się tematem drzew binarnych.
-            </p>
-        </div>
-        <div class="col-3-6">
-            <h2 class="roboto-font">Czego warto się douczyć?</h2>
-            <p class="lato-font">
-                Rzeczą, która szczególnie będzie mnie interesować podczas kursu, będą na pewno algorytmy zrandomizowane. Po zakończeniu
+<?php
+echo $subject_div_gen->put_subject_div("Algorytmy i struktury danych", "dr inż. Zbigniew Gołębiewski",
+    "Poznałem notację asymptotyczną. Zaznajomiłem się z podstawowymi algorytmami sortowania oraz ich złożonością obliczeniową.
+                Obecnie na kursie zajmujemy się tematem drzew binarnych.",
+    "Rzeczą, która szczególnie będzie mnie interesować podczas kursu, będą na pewno algorytmy zrandomizowane. Po zakończeniu
                 kursu mam zamiar nadal zgłębiać swoją wiedzę z zakresu algorytmiki, gdyż wiążę z tą dziedziną informatyki swoje studia
-                II stopnia.
-            </p>
-        </div>
-    </div>
-</div>
-
-<div class="row background-color-2">
-    <div class="col-6-6 text-on-background">
-        <div class="subject">
-            <h2 class="roboto-font">Wprowadzenie do teorii grafów</h2>
-            <h3 class="lato-font">Prowadzący: prof. dr hab. Michał Morayne</h3>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-3-6">
-            <h2 class="roboto-font">Czego się dowiedziałem?</h2>
-            <p class="lato-font">
-                Nauczyłem się podstawowych pojęć, którymi operuje się badając grafy. Obecnie zajmujemy się tematyką grafów eulerowskich.
-            </p>
-        </div>
-        <div class="col-3-6">
-            <h2 class="roboto-font">Czego warto się douczyć?</h2>
-            <p class="lato-font">
-                Chciałbym dowiedzieć się więcej o praktycznym zastosowaniu grafów w informatyce oraz jak takie problemy, wykorzystujace grafy,
-                rozwiązuje się za pomocą odpowiednich narzędzi (języków programowania).
-            </p>
-        </div>
-    </div>
-</div>
-
-<div class="row background-color-2">
-    <div class="col-6-6 text-on-background">
-        <div class="subject">
-            <h2 class="roboto-font">Technologie sieciowe</h2>
-            <h3 class="lato-font">Prowadzący: dr inż. Łukasz Krzywiecki</h3>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-3-6">
-            <h2 class="roboto-font">Czego się dowiedziałem?</h2>
-            <p class="lato-font">
-                Powtórzyłem i utrwaliłem znane dotychczas widomości o sieciach. Nauczyłem się korzystać z podstawowych programów takich
-                jak Ping czy Traceroute. Dowiedziałem się jak opisywać i modelować przepływ danych w sieci za pomocą grafów.
-            </p>
-        </div>
-        <div class="col-3-6">
-            <h2 class="roboto-font">Czego warto się douczyć?</h2>
-            <p class="lato-font">
-                W jaki sposób przesyłane są dane w sieci WWW oraz jak wygląda serwerownia Katedry Informatyki WPPT.
-            </p>
-        </div>
-    </div>
-</div>
-
-<div class="row background-color-2">
-    <div class="col-6-6 text-on-background">
-        <div class="subject">
-            <h2 class="roboto-font">Nowoczesne technologie WWWW</h2>
-            <h3 class="lato-font">Prowadzący: prof. dr hab. Jacek Cichoń</h3>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-3-6">
-            <h2 class="roboto-font">Czego się dowiedziałem?</h2>
-            <p class="lato-font">
-                Poznałem podstawowe znaczniki HTML5 i CSS3. Dowiedziałem się trochę na temat teorii kolorów i w jaki sposób z nich
+                II stopnia.");
+echo $subject_div_gen->put_subject_div("Wprowadzenie do teorii grafów", "prof. dr hab. Michał Morayne",
+    "Nauczyłem się podstawowych pojęć, którymi operuje się badając grafy. Obecnie zajmujemy się tematyką grafów eulerowskich.",
+    "Chciałbym dowiedzieć się więcej o praktycznym zastosowaniu grafów w informatyce oraz jak takie problemy, wykorzystujace grafy,
+                rozwiązuje się za pomocą odpowiednich narzędzi (języków programowania).");
+echo $subject_div_gen->put_subject_div("Technologie sieciowe", "dr inż. Łukasz Krzywiecki",
+    "Powtórzyłem i utrwaliłem znane dotychczas widomości o sieciach. Nauczyłem się korzystać z podstawowych programów takich
+                jak Ping czy Traceroute. Dowiedziałem się jak opisywać i modelować przepływ danych w sieci za pomocą grafów.",
+    "W jaki sposób przesyłane są dane w sieci WWW oraz jak wygląda serwerownia Katedry Informatyki WPPT.");
+echo $subject_div_gen->put_subject_div("Nowoczesne technologie WWWW", "prof. dr hab. Jacek Cichoń",
+    "Poznałem podstawowe znaczniki HTML5 i CSS3. Dowiedziałem się trochę na temat teorii kolorów i w jaki sposób z nich
                 korzystać na budowanych stronach. Poznałem podstawowe zasady, którymi rządzi się design stron WWWW. Zacząłem również
-                naukę języka JavaScript.
-            </p>
-        </div>
-        <div class="col-3-6">
-            <h2 class="roboto-font">Czego warto się douczyć?</h2>
-            <p class="lato-font">
-                W jaki sposób wykorzystywać frameworki takie jak Bootstrap, Foundation czy Django.
-            </p>
-        </div>
-    </div>
-</div>
-
-<div class="row background-color-2">
-    <div class="col-6-6 text-on-background">
-        <div class="subject">
-            <h2 class="roboto-font">Grafika komputerowa i wizualizacja</h2>
-            <h3 class="lato-font">Prowadzący: dr Marcin Kik</h3>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-3-6">
-            <h2 class="roboto-font">Czego się dowiedziałem?</h2>
-            <p class="lato-font">
-                Poznałem podstawy obsługi WebGL z wykorzystaniem języka JavaScript. Nauczyłem się tworzyć prostą grafikę
-                w technologii Canvas.
-            </p>
-        </div>
-        <div class="col-3-6">
-            <h2 class="roboto-font">Czego warto się douczyć?</h2>
-            <p class="lato-font">
-                Oprócz WebGL chciałbym nauczyć się także najnowszego OpenGL, który jest nieco bardziej skomplikowany od swojego
-                webowego odpowiednika
-            </p>
-        </div>
-    </div>
-</div>
+                naukę języka JavaScript.",
+    "W jaki sposób wykorzystywać frameworki takie jak Bootstrap, Foundation czy Django.");
+echo $subject_div_gen->put_subject_div("Grafika komputerowa i wizualizacja", "dr Marcin Kik",
+    "Poznałem podstawy obsługi WebGL z wykorzystaniem języka JavaScript. Nauczyłem się tworzyć prostą grafikę
+                w technologii Canvas.",
+    "Oprócz WebGL chciałbym nauczyć się także najnowszego OpenGL, który jest nieco bardziej skomplikowany od swojego
+                webowego odpowiednika.");
+?>
 
 <div class="container">
     <div class="row">
